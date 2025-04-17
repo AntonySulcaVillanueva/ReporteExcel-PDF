@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Alumnos</title>
+</head>
+<body>
+<h1>Lista de Alumnos</h1>
+
+<!-- Botones para exportar a PDF y Excel -->
+<div>
+    <a href="/demo/gestion/alumnos/export/pdf">
+        <button>Exportar a PDF</button>
+    </a>
+    <a href="/demo/gestion/alumnos/export/excel">
+        <button>Exportar a Excel</button>
+    </a>
+</div>
+
+<!-- Botón para agregar un nuevo alumno -->
+<a href="/demo/gestion/alumnos/nuevo">Agregar Nuevo Alumno</a>
+
+<!-- Tabla de alumnos -->
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Salón</th>
+        <th>Número Aula</th>
+        <th>Nota Final</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="alumno : ${alumnos}">
+        <td th:text="${alumno.id}"></td>
+        <td th:text="${alumno.nombre}"></td>
+        <td th:text="${alumno.apellido}"></td>
+        <td th:text="${alumno.salon}"></td>
+        <td th:text="${alumno.numeroAula}"></td>
+        <td th:text="${alumno.notafinal}"></td>
+        <td>
+            <a th:href="@{/demo/gestion/alumnos/{id}(id=${alumno.id})}">Ver</a> |
+            <a th:href="@{/demo/gestion/alumnos/editar/{id}(id=${alumno.id})}">Editar</a> |
+            <a th:href="@{/demo/gestion/alumnos/eliminar/{id}(id=${alumno.id})}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

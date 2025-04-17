@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle del Alumno</title>
+</head>
+<body>
+<h1>Detalle del Alumno</h1>
+<p><strong>ID:</strong> <span th:text="${alumno.id}"></span></p>
+<p><strong>Nombre:</strong> <span th:text="${alumno.nombre}"></span></p>
+<p><strong>Apellido:</strong> <span th:text="${alumno.apellido}"></span></p>
+<p><strong>Salón:</strong> <span th:text="${alumno.salon}"></span></p>
+<p><strong>Número Aula:</strong> <span th:text="${alumno.numeroAula}"></span></p>
+<p><strong>Fecha de Nacimiento:</strong> <span th:text="${alumno.fechaNacimiento}"></span></p>
+<p><strong>Nota 1:</strong> <span th:text="${alumno.nota1}"></span></p>
+<p><strong>Nota 2:</strong> <span th:text="${alumno.nota2}"></span></p>
+<p><strong>Nota 3:</strong> <span th:text="${alumno.nota3}"></span></p>
+<p><strong>Nota 4:</strong> <span th:text="${alumno.nota4}"></span></p>
+<br>
+<p><strong>Nota Final:</strong> <span th:text="${alumno.notafinal}"></span></p>
+<a href="/demo/gestion/alumnos">Volver</a>
+</body>
+</html>
